@@ -1,0 +1,5 @@
+var SandwichMaker = (function(){
+	return {}
+
+
+})();
