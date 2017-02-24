@@ -1,9 +1,13 @@
-var SandwichMaker = (function(oldSandwichMaker){
-	var cheese = {"cheddar": 1.50, "swiss": 1.50, "blue": 1.50};
+var SandwichMaker = (function(maker){
+	var cheese = {
+		"cheddar": 1.50, 
+		"swiss": 1.50, 
+		"blue": 1.50
+	};
 
-	oldSandwichMaker.getCheese = function(){
+	maker.getCheese = function(){
 		return cheese;
 	};
 
-	return oldSandwichMaker;
+	return maker;
 })(SandwichMaker || {});
