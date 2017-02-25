@@ -4,10 +4,15 @@
 	justify-content: center;
 }
 
-fieldset {
+fieldset, .order {
 	border-radius: 10%;
 	border: solid 1em tomato;
 	background: honeydew;
+}
+
+.order {
+	width: 200px;
+	height: 150px;
 }
 
 legend {
@@ -17,21 +22,16 @@ legend {
 	color: goldenrod;
 }
 
-label {
+.magic, label {
 	font-family: Helvetica;
 	font-size: 1.25em;
 }
 
-button, .window {
+button {
 	border: solid 0.75em tomato;
 	background: honeydew;
 	border-radius: 10%;
-	align-content: center;
-}
-
-button {
 	font-size: 1.25em;
 	width: 223px;
-	height: 75px;
-	
+	height: 175px;
 }

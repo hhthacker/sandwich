@@ -82,15 +82,14 @@ veggiesChooser.addEventListener("change", function(event) {
 	finalSandwichPrice = SandwichMaker.getTotalPrice();
 	console.log("condiment", selectedTopping, finalSandwichPrice);
 })
-  // Determine the price of the topping chosen
-  // Add the topping to the SandwichMaker to increase the total price
+
 
 //writes sandwich to DOM
 function magicSandwich(event) {
 	console.log("submit sandy");
 	finalSandwichPrice = SandwichMaker.getTotalPrice();
 	console.log("sandy price", finalSandwichPrice);
-	var sandyOrder = `<p>yum yum! Your sandwich is $ ${finalSandwichPrice}</p>`;
+	var sandyOrder = `<p class="magic">yum yum!<br> Your sandwich is <br> $${finalSandwichPrice}</p>`;
 	sandwichOrder.innerHTML += sandyOrder;
 };
 
