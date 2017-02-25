@@ -1,16 +1,20 @@
-var SandwichMaker = (function(maker){
+var SandwichMaker = (function(meatOption){
 	var meatPrices = {
-		"turkey": 2.50, 
-		"chicken": 2.50, 
-		"salami": 2.50, 
-		"bologna": 2.50
+		"turkey": 2.25, 
+		"chicken": 2.75, 
+		"salami": 3.50, 
+		"bologna": 1.50
 	};
 
-	maker.getMeat = function(meat){
-		console.log("first chicken??", meat);
-		console.log("price of 2.50?", meatPrices[meat]);
-		return meatPrices[meat];
+	//connected to DOM event listener, connecting key to value
+	meatOption.getMeat = function(meatChoice){
+		var meatChoicePrice = meatPrices[meatChoice];
+		SandwichMaker.addTopping(meatChoicePrice);
 	};
+	meatOption.setMeat = function(meatChoice){
+		var meatChoicePrice = meatPrices[meatChoice];
+		SandwichMaker.removeTopping(meatChoicePrice);
+	}
 
-	return maker;
+	return meatOption;
 })(SandwichMaker || {});

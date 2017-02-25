@@ -1,5 +1,3 @@
-var submitSandy = document.getElementById("sandy");
-var finalSandyDiv = document.getElementById("myOrder");
 
 var SandwichMaker = (function(){
 	//private variable to store price
@@ -9,10 +7,15 @@ var SandwichMaker = (function(){
 	return {
 		addTopping: function(toppingPrice) {
 			totalPrice += toppingPrice;
+			SandwichMaker.getTotalPrice();
+		},
+		removeTopping: function(toppingPrice) {
+			totalPrice -= toppingPrice;
+			SandwichMaker.getTotalPrice();
+		},
+		getTotalPrice: function() {
+			return totalPrice;
 		}
 	};
+})(SandwichMaker || {});
 
-})();
-
-submitSandy.addEventListener("click", SandwichMaker);
-console.log(SandwichMaker);
