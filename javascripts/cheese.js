@@ -1,14 +1,18 @@
-var SandwichMaker = (function(maker){
+var SandwichMaker = (function(cheeseOption){
 	var cheesePrices = {
-		"cheddar": 1.50, 
-		"swiss": 1.50, 
-		"blue": 1.50
+		"cheddar": 1.25, 
+		"swiss": 1.75, 
+		"blue": 2.50
 	};
 
-	maker.getCheese = function(cheese){
-		// console.log("chz plz", cheesePrices[cheese], cheese);
-		return cheesePrices[cheese];
+	cheeseOption.getCheese = function(cheeseChoice){
+		var cheeseChoicePrice = cheesePrices[cheeseChoice];
+		SandwichMaker.addTopping(cheeseChoicePrice);
 	};
+	cheeseOption.setCheese = function(cheeseChoice){
+		var cheeseChoicePrice = cheesePrices[cheeseChoice];
+		SandwichMaker.removeTopping(cheeseChoicePrice);
+	}
 
-	return maker;
+	return cheeseOption;
 })(SandwichMaker || {});

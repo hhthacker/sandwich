@@ -1,5 +1,5 @@
-var SandwichMaker = (function(maker){
-	var veggies = {
+var SandwichMaker = (function(veggiesOption){
+	var veggiesPrices = {
 		"tomato":0.75, 
 		"spinach": 0.75, 
 		"onion": 0.75, 
@@ -8,9 +8,14 @@ var SandwichMaker = (function(maker){
 		"avocado": 0.75
 	};
 
-	maker.getVeggies = function(){
-		return veggies;
+	veggiesOption.getVeggies = function(veggiesChoice){
+		var veggiesChoicePrice = veggiesPrices[veggiesChoice];
+		SandwichMaker.addTopping(veggiesChoicePrice);
+	};
+	veggiesOption.setVeggies = function(veggiesChoice){
+		var veggiesChoicePrice = veggiesPrices[veggiesChoice];
+		SandwichMaker.removeTopping(veggiesChoicePrice);
 	};
 
-	return maker;
+	return veggiesOption;
 })(SandwichMaker || {});

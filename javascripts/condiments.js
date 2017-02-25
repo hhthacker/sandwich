@@ -1,16 +1,22 @@
-var SandwichMaker = (function(oldSandwichMaker){
-	var condiment = {
-		"miso": 0.5,
-		"hummus": 0.5,
-		"mayo": 0.5,
-		"ranch": 0.5,
-		"sriracha": 0.5,
-		"mustard": 0.5
+var SandwichMaker = (function(condimentOption){
+	var condimentPrices = {
+		"miso": 0.50,
+		"hummus": 0.75,
+		"mayo": 0.25,
+		"ranch": 1.00,
+		"sriracha": 1.25,
+		"mustard": 1.50
 	};
 
-	oldSandwichMaker.getCondiment = function(){
-		return condiment;
+	//connected to DOM event listener, connecting key to value
+	condimentOption.getCondiment = function(condimentChoice){
+		var condimentChoicePrice = condimentPrices[condimentChoice];
+		SandwichMaker.addTopping(condimentChoicePrice);
+	};
+	condimentOption.setCondiment = function(condimentChoice){
+		var condimentChoicePrice = condimentPrices[condimentChoice];
+		SandwichMaker.removeTopping(condimentChoicePrice);
 	};
 
-	return oldSandwichMaker;
+	return condimentOption;
 })(SandwichMaker || {});

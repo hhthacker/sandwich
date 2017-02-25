@@ -8,18 +8,25 @@ var cheeseChooser = document.getElementById("cheese-chooser");
 var condimentsChooser = document.getElementById("condiments-chooser");
 var veggiesChooser = document.getElementById("veggies-chooser");
 
-var sandwhichOrder = document.getElementById("myOrder")
+var sandwichOrder = document.getElementById("myOrder");
 var submitSandy = document.getElementById("sandy");
 
 /* 
   A <select> element broadcasts a change event, so you listen for it
   and get the value of the topping from your augmented IIFE
 */
-// breadChooser.addEventListener("click", function(event) {
-// 	selectedTopping = event.target.id;
-// 	// console.log("mighty breads", breadChooser);
-// 	selectedTopping = ??????
-// });
+breadChooser.addEventListener("click", function(event) {
+	if (event.target.checked) {
+		selectedTopping = event.target.value;
+		SandwichMaker.getBread(selectedTopping);
+	}
+	if (event.target.checked === false) {
+		selectedTopping = event.target.value;
+		SandwichMaker.setBread(selectedTopping);
+	}
+	finalSandwichPrice = SandwichMaker.getTotalPrice();
+	console.log("bread", selectedTopping, finalSandwichPrice);
+});
 
 
 meatChooser.addEventListener("change", function(event) {
@@ -34,29 +41,60 @@ meatChooser.addEventListener("change", function(event) {
 	 	SandwichMaker.setMeat(selectedTopping);
 	 }
 	 finalSandwichPrice = SandwichMaker.getTotalPrice();
-	 console.log("meats", selectedTopping, finalSandwichPrice)
-
+	 console.log("meats", selectedTopping, finalSandwichPrice);
 });
 
-// cheeseChooser.addEventListener("change", function(event) {
-// 	selectedCheese = event.target.value;
-// 	SandwichMaker.getCheese(selectedCheese);
-// 	console.log("selected cheese", selectedCheese);
-// });
+cheeseChooser.addEventListener("change", function(event) {
+	if (event.target.checked) {
+		selectedTopping = event.target.value;
+		SandwichMaker.getCheese(selectedTopping);
+	}
+	if (event.target.checked === false) {
+		selectedTopping = event.target.value;
+		SandwichMaker.setCheese(selectedTopping);
+	}
+	finalSandwichPrice = SandwichMaker.getTotalPrice();
+	console.log("cheese", selectedTopping, finalSandwichPrice);
+});
 
+condimentsChooser.addEventListener("change", function(event) {
+	if (event.target.checked) {
+		selectedTopping = event.target.value;
+		SandwichMaker.getCondiment(selectedTopping);
+	}
+	if (event.target.checked === false) {
+		selectedTopping = event.target.value;
+		SandwichMaker.setCondiment(selectedTopping);
+	}
+	finalSandwichPrice = SandwichMaker.getTotalPrice();
+	console.log("condiment", selectedTopping, finalSandwichPrice);
+});
 
+veggiesChooser.addEventListener("change", function(event) {
+	if (event.target.checked) {
+		selectedTopping = event.target.value;
+		SandwichMaker.getVeggies(selectedTopping);
+	}
+	if (event.target.checked === false) {
+		selectedTopping = event.target.value;
+		SandwichMaker.setVeggies(selectedTopping);
+	}
+	finalSandwichPrice = SandwichMaker.getTotalPrice();
+	console.log("condiment", selectedTopping, finalSandwichPrice);
+})
   // Determine the price of the topping chosen
   // Add the topping to the SandwichMaker to increase the total price
 
 //writes sandwich to DOM
-function magicSandwich() {
+function magicSandwich(event) {
+	console.log("submit sandy");
 	finalSandwichPrice = SandwichMaker.getTotalPrice();
-	var sandyOrder = `<p>yum yum! ${[]}</p>`;
-	myOrder.innerHTML += sandyOrder;
+	console.log("sandy price", finalSandwichPrice);
+	var sandyOrder = `<p>yum yum! Your sandwich is $ ${finalSandwichPrice}</p>`;
+	sandwichOrder.innerHTML += sandyOrder;
 };
 
 //hears the button clicky
 submitSandy.addEventListener("click", magicSandwich);
-
 
 

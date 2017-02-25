@@ -1,13 +1,18 @@
-var SandwichMaker = (function(maker){
-	var bread = {
+var SandwichMaker = (function(breadOption){
+	var breadPrices = {
 		"sourdough": 0.75, 
-		"multigrain": 0.75, 
-		"rye": 0.75
+		"multigrain": 1.25, 
+		"rye": 1.50
 	};
 
-	maker.getBread = function(){
-		return bread;
+	breadOption.getBread = function(breadChoice){
+		var breadChoicePrice = breadPrices[breadChoice];
+		SandwichMaker.addTopping(breadChoicePrice);
 	};
+	breadOption.setBread = function(breadChoice){
+		var breadChoicePrice = breadPrices[breadChoice];
+		SandwichMaker.addTopping(breadChoicePrice);
+	}
 
-	return maker;
+	return breadOption;
 })(SandwichMaker || {});
