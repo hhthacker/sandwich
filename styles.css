@@ -1,0 +1,37 @@
+.container {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+fieldset, .order {
+	border-radius: 10%;
+	border: solid 1em tomato;
+	background: honeydew;
+}
+
+.order {
+	width: 200px;
+	height: 150px;
+}
+
+legend {
+	font-weight: 700;
+	font-size: 2em;
+	margin: auto;
+	color: goldenrod;
+}
+
+.magic, label {
+	font-family: Helvetica;
+	font-size: 1.25em;
+}
+
+button {
+	border: solid 0.75em tomato;
+	background: honeydew;
+	border-radius: 10%;
+	font-size: 1.25em;
+	width: 223px;
+	height: 175px;
+}

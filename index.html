@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sandwich Maker!!</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div class="container">
+	<form>
+<fieldset id="bread-chooser">
+<legend>Bread</legend>
+<label><input type="checkbox" name="bread" value="sourdough">Sourdough</label></br>
+<label><input type="checkbox" name="bread" value="multigrain">Multigrain</label></br>
+<label><input type="checkbox" name="bread" value="rye">Rye</label></br>
+</fieldset>
+
+<fieldset id="meat-chooser">
+<legend>Meat</legend>
+	<label><input type="checkbox" name="meat" value="turkey">Turkey</label></br>
+	<label><input type="checkbox" name="meat" value="chicken">Chicken</label></br>
+	<label><input type="checkbox" name="meat" value="salami">Salami</label></br>
+	<label><input type="checkbox" name="meat" value="bologna">Bologna</label></br>
+</fieldset>
+
+<fieldset id="cheese-chooser">
+<legend>Cheese</legend>
+	<label><input type="checkbox" name="cheese" value="cheddar">Cheddar</label></br>
+	<label><input type="checkbox" name="cheese" value="swiss">Swiss</label></br>
+	<label><input type="checkbox" name="cheese" value="blue">Blue</label></br>
+</fieldset>
+
+<fieldset id="condiments-chooser">
+<legend>Condiments</legend>
+	<label><input type="checkbox" name="condiments" value="miso">Miso</label></br>
+	<label><input type="checkbox" name="condiments" value="hummus">Hummus</label></br>
+	<label><input type="checkbox" name="condiments" value="mayo">Mayo</label></br>
+	<label><input type="checkbox" name="condiments" value="ranch">Ranch</label></br>
+	<label><input type="checkbox" name="condiments" value="sriracha">Sriracha</label></br>
+	<label><input type="checkbox" name="condiments" value="mustard">Mustard</label></br>
+</fieldset>
+
+<fieldset id="veggies-chooser">
+<legend>Veggies</legend>
+	<label><input type="checkbox" name="veggies" value="tomato">Tomato</label></br>
+	<label><input type="checkbox" name="veggies" value="spinach">Spinach</label></br>
+	<label><input type="checkbox" name="veggies" value="onion">Onion</label></br>
+	<label><input type="checkbox" name="veggies" value="olives">Olives</label></br>
+	<label><input type="checkbox" name="veggies" value="cucumber">Cucumber</label></br>
+	<label><input type="checkbox" name="veggies" value="avocado">Avocado</label></br>
+</fieldset>
+</form>
+</div>
+
+<div class="container">
+<div class="order" id="myOrder" class="window"></div>
+<br><button id="sandy">Submit Sandy</button>
+</div>
+
+
+
+<script src="/javascripts/SandwichMaker.js" type="text/javascript"></script>
+<script src="/javascripts/bread.js" type="text/javascript"></script>
+<script src="/javascripts/meat.js" type="text/javascript"></script>
+<script src="/javascripts/cheese.js" type="text/javascript"></script>
+<script src="/javascripts/condiments.js" type="text/javascript"></script>
+<script src="/javascripts/veggies.js" type="text/javascript"></script>
+<script src="/javascripts/DOMHandler.js" type="text/javascript"></script>
+
+</body>
+</html>
